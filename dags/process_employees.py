@@ -85,7 +85,7 @@ def merge_data():
     except Exception as e:
         return 1
     
-    import datetime
+import datetime
 import pendulum
 import os
 
