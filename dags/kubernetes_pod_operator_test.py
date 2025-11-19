@@ -15,6 +15,6 @@ with DAG(
         namespace="airflow",
         image="busybox",
         cmds=["sh", "-c"],
-        arguments=["echo 'Hello from Kubernetes!'","sleep 60","echo 'Goodbye!'"],
+        arguments=["echo 'Hello from Kubernetes!' && sleep 60 && echo 'Goodbye!'"],
         get_logs=True,
     )
