@@ -12,7 +12,7 @@ with DAG(
     hello = KubernetesPodOperator(
         task_id="hello",
         name="hello-world",
-        namespace="default",
+        namespace="airflow",
         image="busybox",
         cmds=["sh", "-c"],
         arguments=["echo 'Hello from Kubernetes!'"],
