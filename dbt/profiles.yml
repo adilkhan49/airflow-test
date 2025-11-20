@@ -3,7 +3,7 @@ dbt_test:
     dev:
       dbname: dbt_test
       host: host.docker.internal
-      user: "{{ env_var('database_password') }}"
+      password: "{{ env_var('database_password') }}"
       port: 5433
       schema: analytics
       threads: 4
