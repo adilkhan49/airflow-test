@@ -14,7 +14,7 @@ with DAG(
         task_id="hello-secret",
         name="hello-secret",
         namespace="airflow",
-        image="busybox",
+        image="alpine:3.19",
         cmds=["sh", "-c"],
         arguments=["echo $database_user $database_password "],
         get_logs=True,
