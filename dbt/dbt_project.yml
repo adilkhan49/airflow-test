@@ -1,0 +1,17 @@
+# dbt_project.yml (inside dbt_pg_tutorial)
+name: 'dbt_test'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_test'
+
+models:
+  dbt_test:
+    +materialized: view    # default; override per-model when needed
+    staging:
+      +schema: staging     # optional: place staging views in analytics_staging
+    intermediate:
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
