@@ -1,7 +1,7 @@
 from airflow import DAG
 from datetime import datetime
-from airflow.contrib.kubernetes.secret import Secret
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
+from airflow.providers.cncf.kubernetes.secrets import Secret
 
 database_user = Secret(
    deploy_type="env", deploy_target="SECRET_1", secret="postgres-db-connection", key="database_user"
