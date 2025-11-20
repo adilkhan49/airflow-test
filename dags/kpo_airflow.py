@@ -7,7 +7,7 @@ def make_dbt_task(task_id: str, dbt_command: list[str]):
     return KubernetesPodOperator(
         task_id=task_id,
         name=task_id,
-        namespace="airflow",
+        namespace="dbt",
         image="my-dags:0.0.1",
         cmds=["dbt"],
         arguments=dbt_command + ["--profiles-dir", ".", "--target", "prod"],
