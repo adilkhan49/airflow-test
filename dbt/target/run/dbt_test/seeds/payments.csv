@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "dbt_test"."raw"."payments";
+    -- dbt seed --
+    
+          insert into "dbt_test"."raw"."payments" ("id", "order_id", "payment_method", "amount", "paid_at") values
+          (%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s)
+      
+
+;
+  

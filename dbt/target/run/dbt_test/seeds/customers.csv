@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "dbt_test"."raw"."customers";
+    -- dbt seed --
+    
+          insert into "dbt_test"."raw"."customers" ("id", "first_name", "last_name", "email", "created_at") values
+          (%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s)
+      
+
+;
+  
