@@ -8,14 +8,14 @@ def make_dbt_task(task_id: str, dbt_command: list[str]):
         task_id=task_id,
         name=task_id,
         namespace="dbt",
-        service_account_name="airflow",
+        service_account_name="airflow-worker",
         image="my-dags:0.0.1",
         cmds=["dbt"],
         arguments=dbt_command + ["--profiles-dir", ".", "--target", "prod"],
         get_logs=True,
         is_delete_operator_pod=False,
         in_cluster=False,
-        env_from=[{"secretRef": {"name": "postgres-db-connection"}}]
+        env_from=[{"secretRef": {"name": "postgres-db-connection", "namespace": "airflow"}}]
     )
 
 with DAG(
