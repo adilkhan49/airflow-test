@@ -8,6 +8,7 @@ def make_dbt_task(task_id: str, dbt_command: list[str]):
         task_id=task_id,
         name=task_id,
         namespace="dbt",
+        service_account_name="airflow",
         image="my-dags:0.0.1",
         cmds=["dbt"],
         arguments=dbt_command + ["--profiles-dir", ".", "--target", "prod"],
