@@ -5,7 +5,7 @@ from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperato
 
 def make_dbt_task(task_id: str, dbt_command: list[str]):
     return KubernetesPodOperator(
-        task_id=f"dbt_{dbt_command}",
+        task_id=task_id,
         name=task_id,
         namespace="airflow",
         image="my-dags:0.0.1",
