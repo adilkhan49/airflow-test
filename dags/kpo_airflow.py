@@ -16,7 +16,7 @@ with DAG(
         namespace="airflow",
         image="my-dags:0.0.1",
         cmds=["dbt"],
-        arguments=["run", "--profiles-dir", "."],
+        arguments=["run", "--profiles-dir", ".", "--target", "prod"],
         ## no change on below
         get_logs=True,
         is_delete_operator_pod=False,

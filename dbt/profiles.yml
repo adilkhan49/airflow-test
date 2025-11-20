@@ -2,6 +2,15 @@ dbt_test:
   outputs:
     dev:
       dbname: dbt_test
+      host: localhost
+      password: my_password
+      port: 5433
+      schema: analytics
+      threads: 4
+      type: postgres
+      user: postgres
+    prod:
+      dbname: dbt_test
       host: host.docker.internal
       password: "{{ env_var('database_password') }}"
       port: 5433
