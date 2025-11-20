@@ -19,7 +19,7 @@ with DAG(
 ):
 
     hello = KubernetesPodOperator(
-        task_id="hello",
+        task_id="hello-secret",
         name="hello-world",
         namespace="airflow",
         image="busybox",
