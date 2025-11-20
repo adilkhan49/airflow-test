@@ -12,7 +12,7 @@ database_password = Secret(
 )
 
 with DAG(
-    dag_id="hello_k8s_pod",
+    dag_id="hello_secrets",
     start_date=datetime(2024, 1, 1),
     schedule=None,
     catchup=False,
