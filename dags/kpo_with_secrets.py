@@ -20,7 +20,7 @@ with DAG(
 
     hello = KubernetesPodOperator(
         task_id="hello-secret",
-        name="hello-world",
+        name="hello-secret",
         namespace="airflow",
         image="busybox",
         cmds=["sh", "-c"],
