@@ -1,0 +1,12 @@
+dbt_test:
+  outputs:
+    dev:
+      dbname: dbt_test
+      host: host.docker.internal
+      user: "{{ env_var('database_password') }}"
+      port: 5433
+      schema: analytics
+      threads: 4
+      type: postgres
+      user: "{{ env_var('database_username') }}"
+  target: dev
