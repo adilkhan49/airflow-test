@@ -14,7 +14,7 @@ with DAG(
         task_id="dbt-test",
         name="dbt-test",
         namespace="airflow",
-        image="my-dags:latest",
+        image="my-dags:0.0.2",
         cmds=["dbt"],
         arguments=["run", "--profiles-dir", "."],
         ## no change on below
