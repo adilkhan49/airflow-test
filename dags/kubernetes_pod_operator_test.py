@@ -15,6 +15,28 @@ with DAG(
         namespace="airflow",
         image="busybox",
         cmds=["sh", "-c"],
-        arguments=["echo 'Hello from Kubernetes!' && sleep 60 && echo 'Goodbye!'"],
+        arguments=["echo 'Hello from Kubernetes!''"],
         get_logs=True,
     )
+
+    sleep = KubernetesPodOperator(
+        task_id="sleep",
+        name="sleep",
+        namespace="airflow",
+        image="busybox",
+        cmds=["sh", "-c"],
+        arguments=["sleep 60"],
+        get_logs=True,
+    )
+
+    goodbye = KubernetesPodOperator(
+        task_id="goodbye",
+        name="goodbye",
+        namespace="airflow",
+        image="busybox",
+        cmds=["sh", "-c"],
+        arguments=["echo 'Goodbye!'"],
+        get_logs=True,
+    )
+
+    hello >> sleep >> goodbye
