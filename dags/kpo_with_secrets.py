@@ -16,7 +16,7 @@ with DAG(
         namespace="airflow",
         image="alpine:3.19",
         cmds=["sh", "-c"],
-        arguments=["echo $database_user $database_password "],
+        arguments=["echo $database_username $database_password"],
         get_logs=True,
         env_from=[{"secretRef": {"name": "postgres-db-connection"}}]
     )
