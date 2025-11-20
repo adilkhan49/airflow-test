@@ -26,5 +26,5 @@ with DAG(
         cmds=["sh", "-c"],
         arguments=["echo $database_user $database_password "],
         get_logs=True,
-        secrets = [database_user,database_password]
+        env_from=[{"secretRef": {"name": "postgres-db-connection"}}]
     )
