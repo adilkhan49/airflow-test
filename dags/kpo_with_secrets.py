@@ -2,13 +2,6 @@ from airflow import DAG
 from datetime import datetime
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
 
-database_user = Secret(
-   deploy_type="env", deploy_target="SECRET_1", secret="postgres-db-connection", key="database_user"
-)
-
-database_password = Secret(
-   deploy_type="env", deploy_target="SECRET_1", secret="postgres-db-connection", key="database_password"
-)
 
 with DAG(
     dag_id="hello_secrets",
